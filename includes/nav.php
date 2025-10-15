@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 if (!isset($title)) {
     $title = 'Home';
 }
@@ -37,14 +40,16 @@ if (!isset($title)) {
                         <a class="nav-link <?= $_SERVER['REQUEST_URI'] == '/create.php' ? 'active' : ''; ?>" href="../create.php">Create</a>
                     </li>
                 </ul>
-                <!-- <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.html">Register</a>
-                    </li>
-                </ul> -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <?php if (isset($user)) { ?>
+                        <li class="nav-item">
+                            <span class="nav-link"><?= $user; ?></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logout</a>
+                        </li>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
     </nav>
