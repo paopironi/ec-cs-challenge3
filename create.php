@@ -1,4 +1,10 @@
 <?php
+session_start();
+$user = $_SESSION['user'] ?? null;
+if (!$user) {
+    header("location: http://" . $_SERVER["HTTP_HOST"] . "/login.php");
+    exit;
+}
 $title = 'Create';
 require("includes/nav.php");
 require("connect_db.php");
