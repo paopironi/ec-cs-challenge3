@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST)) {
     $error = [];
     $name = $_POST['name'];

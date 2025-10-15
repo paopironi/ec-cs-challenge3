@@ -1,6 +1,7 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
+    $user = $_SESSION['user'] ?? null;
 }
 if (!isset($title)) {
     $title = 'Home';

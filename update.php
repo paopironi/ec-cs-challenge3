@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Get the id of the item that is being update from the uri.
 $item_id = explode('/', $_SERVER['REQUEST_URI'])[2];
 if (isset($_POST)) {
