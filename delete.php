@@ -1,4 +1,5 @@
 <?php
+session_start();
 $item_id = explode('/', $_SERVER['REQUEST_URI'])[2];
 if (isset($_POST)) {
     require("connect_db.php");
@@ -6,7 +7,7 @@ if (isset($_POST)) {
     mysqli_stmt_bind_param($query, "i", $item_id);
     $deleted = @mysqli_stmt_execute($query);
     if ($deleted) {
-	$title = 'Delete';
+        $title = 'Delete';
         require("includes/nav.php");
 ?>
         <main class="container py-3">
