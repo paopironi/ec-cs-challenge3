@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="container-fluid py-5 mt-5">
+<footer class="container-fluid py-5">
     <!-- <div class="container pb-5 border-bottom border-light border-opacity-25">
         <div class="row">
             <div class="col-md-2 col-4">
